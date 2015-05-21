@@ -1,0 +1,17 @@
+{
+  "name": "socket.io-cpp-client-sample",
+  "version": "0.0.0",
+  "description": "Sample of Socket.IO C++ Client.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "~4.12.4"
+  },
+  "devDependencies": {
+    "socket.io": "~1.3.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yuji Ito",
+  "license": "MIT"
+}
