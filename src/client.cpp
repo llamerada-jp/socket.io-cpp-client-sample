@@ -110,7 +110,7 @@ public:
 
       } else {
 	// エラーを検出した場合はエラーメッセージを取得する
-	output << strerr(errno);
+	output << strerror(errno);
       }
       
       pclose(fp);
