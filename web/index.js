@@ -1,5 +1,21 @@
+var fs          = require('fs');
 var app         = require('express')();
-var server      = require('http').Server(app);
+var server;
+if (process.env.ENABLE_SSL) {
+    // SSL通信路を作成
+    server      = require('https').Server({
+	key:  fs.readFileSync('server.key'),
+	cert: fs.readFileSync('server.crt'),
+	ca:   fs.readFileSync('ca.crt'),
+	requestCert: true,
+	rejectUnauthrized: false
+    }, app);
+    console.log('enable ssl');
+
+} else {
+    // 非SSL通信路を作成
+    server      = require('http').Server(app);
+}
 var io          = require('socket.io')(server);
 
 server.listen(8000);
