@@ -9,12 +9,27 @@ This program is explained in [linked Japanese article](http://llamerad-jp.hatena
 
 ### Compile native client.
 
+Build [socket.io-client-cpp](https://github.com/socketio/socket.io-client-cpp)
+
+ref. https://github.com/socketio/socket.io-client-cpp/blob/master/INSTALL.md#with-cmake
+
 ```
+# at workdir
+$ git -b 3.0.0 clone --recurse-submodules https://github.com/socketio/socket.io-client-cpp.git
+$ mkdir -p socket.io-client-cpp/build
+$ cd socket.io-client-cpp/build
+$ cmake ..
+$ make
+$ sudo make install
+```
+
+Build [sample]()
+
+```
+# at workdir
 $ git clone https://github.com/llamerada-jp/socket.io-cpp-client-sample.git
-$ cd socket.io-cpp-client-sample
-$ cd src
-$ mkdir build
-$ cd build
+$ mkdir -p socket.io-cpp-client-sample/src/build
+$ cd socket.io-cpp-client-sample/src/build
 $ cmake -D SIO_DIR=<Socket.IO C++ Client dir> -D BOOST_ROOT=<Boost dir> ..
 $ make
 ```
@@ -25,7 +40,7 @@ $ make
 $ cd socket.io-cpp-client-sample
 $ cd src
 $ npm install
-$ node index.jx
+$ node index.js
 ```
 
 ### Run client
